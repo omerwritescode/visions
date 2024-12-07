@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <style>
+        .typing-container {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+            color: #d28117;
+            border-right: 2px solid #d28117;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 22ch; /* Adjust based on text length */
+            animation: typing 4s steps(22) infinite, blink 0.6s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 22ch; /* Match with width value */
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="typing-container">Welcome to VISION Fest!</div>
+
+</body>
+</html>

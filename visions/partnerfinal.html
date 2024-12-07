@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners | Visions</title>
+    <link rel="shortcut icon" type="visions-icon" href="vision logo (1).png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <head>
+        <!-- Other head content -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Font Awesome CDN -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    </head>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Cinzel', serif;
+            color: #ffffff;
+            background-image: url('visionsbgfinal.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            height: 80px;
+            padding: 0 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.6);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            font-size: 15px;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .navbar a:hover {
+            color: #d28117;
+        }
+
+        .navbar-brand img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .vista-header {
+            text-align: center;
+            padding: 5rem 0 0 0;
+            color: white;
+        }
+
+        .vista-header h1 {
+            font-size: 2.5rem;
+            color: #d28117;
+        }
+
+        .vista-header p {
+            font-size: 1.5rem;
+            color: #d28117;
+        }
+
+        .partner-section {
+            padding: 4rem 2rem;
+        }
+
+        .partner-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: #f8a941 solid 2px;
+        }
+
+        /* .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+        } */
+
+        .partner-card img {
+            width: 100%;
+            /* Ensures the image scales to the card width */
+            height: 200px;
+            /* Keeps all images the same height */
+            object-fit: contain;
+            /* Ensures the image maintains its aspect ratio */
+            background-color: #000B8D;
+            /* Adds consistent background if needed */
+            padding: 10px;
+            /* Adds space around the image */
+        }
+
+
+        .partner-card .card-body {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .partner-card .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d28117;
+            margin-bottom: 10px;
+        }
+
+        .partner-card .card-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .partner-card .btn-primary {
+            background-color: #d28117;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin-top: auto;
+        }
+
+        .partner-card .btn-primary:hover {
+            background-color: #b36612;
+        }
+
+        .partner-card img {
+            width: 100%;
+            object-fit: contain;
+            background-color: white;
+            /* White background for SVGs */
+            padding: 10px;
+            /* Optional padding for spacing */
+            display: block;
+            /* Ensures the image takes up full width */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            /* Space between the icons */
+            margin-top: 10px;
+            /* Space above the icons */
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            /* Icon size */
+            color: #d28117;
+            /* Icon color */
+            text-decoration: none;
+            /* Remove underlines */
+            transition: color 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        .social-icon:hover {
+            color: #d28117;
+            /* Icon color on hover */
+        }
+
+        .footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            color: #d28117;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="vision logo (1).png" alt="VISION Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link eventGlow" href="visionverse.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partnerfinal.html" style="color: #d28117;">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="crew.html">The Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="visionary tale.html">The Visionary Tale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact us.html">Reach Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vista Point Header -->
+    <div class="vista-header">
+        <h1 style="font-size: 2.5rem; color: #d28117;">Our Partners</h1>
+        <p style="font-size: 1.5rem; color: #d28117;">Experience the grandeur of Vision - where the views are as
+            spectacular
+            as the events.</p>
+    </div>
+
+    <!-- Partner Section -->
+    <div class="container partner-section">
+        <!-- First Row -->
+        <div class="row g-5 mb-5"> <!-- g-5 adds space between columns, mb-5 adds space between rows -->
+            <div class="col-md-4">
+                <div class="partner-card mb-4">
+                    <a href="https://smaaash.in/" target="_blank"><img src="smaaashlogo.png" alt="Smaaash Logo"
+                            style="height: 200px;"></a>
+                    <div class="card-body">
+                        <h3 class="card-title">Smaaaash</h3>
+                        <p class="card-text" style="font-size: 20px;">PLAY. LAUGH. BOND</p>
+                        <p class="card-text" style="font-size: 20px;">From cutting-edge virtual reality marvels to
+                            classic arcade favorites, experience the ultimate gaming extravaganza, catering to every
+                            taste and age, ensuring an unforgettable vibe for everyone who steps in.</p>
+                        <!-- Social Media Icons (Instagram and Twitter) -->
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/smaaash_live?igsh=bWI5NmJndDI5Z285" target="_blank"
+                                class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://x.com/SmaaashLive" target="_blank" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://smaaash.in/" target="_blank" class="social-icon">
+                                <i class="fas fa-globe"></i> <!-- Globe Icon for Website -->
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="partner-card mb-4">
+                    <a href="https://www.facebook.com/PizzaHut/" target="_blank"><img src="pizzahutlogo.jpg"
+                            alt="Pizza Hut Logo" style="height: 200px;"></a>
+                    <div class="card-body">
+                        <h3 class="card-title">Pizza Hut</h3>
+                        <p class="card-text" style="font-size: 20px;">Pizza Hut is a pizza lover's paradise, offering
+                            crispy crusts, gooey cheese, and bold toppings. From classic Pepperoni to indulgent Stuffed
+                            Crust, every slice is a treat. Pair your pizza with cheesy breadsticks or crispy wings for
+                            the ultimate comfort food experience. Perfect for sharing or savoring solo!</p>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/pizzahut?igsh=MTl1eHE2cG5wamlsYg==" target="_blank"
+                                class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://x.com/pizzahut" target="_blank" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.pizzahut.co.in/" target="_blank" class="social-icon">
+                                <i class="fas fa-globe"></i> <!-- Globe Icon for Website -->
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="partner-card mb-4">
+                    <a href="https://www.instagram.com/mumbai.bucketlist?igsh=MWppMXZrcDhsZWVxMA==" target="_blank"><img
+                            src="mumbaibucketlistlogo.jpeg" alt="Mumbai Bucket List" style="height: 200px;"></a>
+                    <div class="card-body">
+                        <h3 class="card-title">Mumbai Bucket List</h3>
+                        <p class="card-text" style="font-size: 20px;">Explore Mumbai with Mumbai Bucket List! Your
+                            ultimate guide to the city's top food spots, hidden gems, and cultural highlights. Perfect
+                            for locals and visitors alike, it's your daily dose of inspiration to experience the best of
+                            Mumbai.</p>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/mumbai.bucketlist?igsh=MWppMXZrcDhsZWVxMA=="
+                                target="_blank" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
