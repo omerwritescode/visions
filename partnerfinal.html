@@ -32,14 +32,25 @@
         }
 
         .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             height: 80px;
             padding: 0 1.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
             background-color: rgba(0, 0, 0, 0.6);
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-toggler {
+            border: none;
+            color: #ffffff;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23e2942ecc' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
 
         .navbar a {
@@ -194,6 +205,40 @@
             color: #d28117;
             font-size: 25px;
         }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+
+            .navbar-toggler {
+                align-self: flex-end;
+                margin-bottom: 1rem;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                gap: 1rem;
+            }
+
+            .navbar-nav .nav-item {
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 0.5rem;
+                font-size: 14px;
+            }
+
+            .navbar-brand img {
+                height: 50px;
+            }
+        }
     </style>
 </head>
 
@@ -240,6 +285,7 @@
         <p style="font-size: 1.5rem; color: #d28117;">Experience the grandeur of Vision - where the views are as
             spectacular
             as the events.</p>
+        <p style="color: #d28117; font-size: 1.5rem;">2024-25</p>
     </div>
 
     <!-- Partner Section -->
@@ -276,7 +322,28 @@
 
             <div class="col-md-4">
                 <div class="partner-card mb-4">
-                    <a href="https://www.facebook.com/PizzaHut/" target="_blank"><img src="pizzahutlogo.jpg"
+                    <a href="https://www.instagram.com/mumbai.bucketlist?igsh=MWppMXZrcDhsZWVxMA==" target="_blank"><img
+                            src="mumbaibucketlistlogo.jpeg" alt="Mumbai Bucket List Logo" style="height: 200px;"></a>
+                    <div class="card-body">
+                        <h3 class="card-title">Mumbai Bucket List</h3>
+                        <p class="card-text" style="font-size: 20px;">Explore Mumbai with Mumbai Bucket List! Your
+                            ultimate guide to the city's top food spots, hidden gems, and cultural highlights. Perfect
+                            for locals and visitors alike, it's your daily dose of inspiration to experience the best of
+                            Mumbai.</p>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/pizzahut?igsh=MTl1eHE2cG5wamlsYg==" target="_blank"
+                                class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="partner-card mb-4">
+                    <a href="https://www.pizzahut.co.in/" target="_blank"><img src="pizzahutlogo.jpg"
                             alt="Pizza Hut Logo" style="height: 200px;"></a>
                     <div class="card-body">
                         <h3 class="card-title">Pizza Hut</h3>
@@ -295,32 +362,14 @@
                             <a href="https://www.pizzahut.co.in/" target="_blank" class="social-icon">
                                 <i class="fas fa-globe"></i> <!-- Globe Icon for Website -->
                             </a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="partner-card mb-4">
-                    <a href="https://www.instagram.com/mumbai.bucketlist?igsh=MWppMXZrcDhsZWVxMA==" target="_blank"><img
-                            src="mumbaibucketlistlogo.jpeg" alt="Mumbai Bucket List" style="height: 200px;"></a>
-                    <div class="card-body">
-                        <h3 class="card-title">Mumbai Bucket List</h3>
-                        <p class="card-text" style="font-size: 20px;">Explore Mumbai with Mumbai Bucket List! Your
-                            ultimate guide to the city's top food spots, hidden gems, and cultural highlights. Perfect
-                            for locals and visitors alike, it's your daily dose of inspiration to experience the best of
-                            Mumbai.</p>
-                        <div class="social-icons">
-                            <a href="https://www.instagram.com/mumbai.bucketlist?igsh=MWppMXZrcDhsZWVxMA=="
-                                target="_blank" class="social-icon">
-                                <i class="fab fa-instagram"></i>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 </body>
 
