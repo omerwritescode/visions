@@ -205,6 +205,58 @@
       text-align: center;
     }
 
+    /* Tooltip container */
+    .right-text {
+      position: relative;
+      /* Required for tooltip positioning */
+      cursor: pointer;
+      /* Change cursor to indicate interactivity */
+    }
+
+    /* Tooltip styling */
+    .right-text::after {
+      content: attr(data-tooltip);
+      /* Get text from the custom attribute */
+      display: none;
+      /* Hidden by default */
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      /* Position below the text */
+      background-color: rgba(0, 0, 0, 0.8);
+      /* Dark background for tooltip */
+      color: #ffffff;
+      /* White text */
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      z-index: 10;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease;
+      /* Smooth appearance */
+      opacity: 0;
+      max-width: 90vw;
+      overflow-wrap: break-word;
+    }
+
+    /* Show tooltip on hover */
+    .right-text:hover::after {
+      display: block;
+      opacity: 1;
+    }
+
+    .right-text:hover::after {
+      position: fixed;
+      /* Use fixed positioning to keep tooltip within viewport */
+      top: calc(100% - 10rem);
+      /* Adjust placement dynamically */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+
     @media (min-width: 992px) {
       .hero-section img {
         max-width: 60%;
@@ -217,6 +269,11 @@
     }
 
     @media (max-width: 768px) {
+
+      body {
+        background-image: url("visionsbgfinaltab.png");
+      }
+
       .navbar {
         flex-direction: column;
         height: auto;
@@ -248,6 +305,14 @@
       .navbar-brand img {
         height: 50px;
       }
+
+      .right-text::after {
+        transform: none;
+        white-space: normal;
+        text-align: left;
+        transform: none;
+      }
+
     }
 
     .hero-section img {
@@ -268,11 +333,11 @@
     }
 
     .carousel-caption-below h5 {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
     .carousel-caption-below p {
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
 
     .carousel-caption-below .btn {
@@ -284,6 +349,10 @@
 
       .navbar {
         padding: 1rem 0.5rem;
+      }
+
+      body {
+        background-image: url("visionsbgfinalmob.png");
       }
 
       .navbar-nav .nav-link {
@@ -308,11 +377,11 @@
       }
 
       .carousel-caption-below h5 {
-        font-size: 0.9rem;
+        font-size: 1rem;
       }
 
       .carousel-caption-below p {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
       }
 
       .carousel-caption-below .btn {
@@ -389,7 +458,8 @@
             <h5>Events</h5>
             <p>Discover the moments we've crafted just for you!</p>
             <a href="visionverse.html" class="btn btn-warning">Explore</a>
-            <a href="Visions Event E-Brochure.pdf" class="btn btn-success" target="_blank" style="background-color: rgb(52, 105, 52);">View Brochure</a>
+            <a href="Visions Event E-Brochure.pdf" class="btn btn-success" target="_blank"
+              style="background-color: rgb(52, 105, 52);">View Brochure</a>
           </div>
         </div>
         <div class="carousel-item">
@@ -406,7 +476,7 @@
           <div class="carousel-caption-below text-center">
             <br />
             <h5>The Visionary Tale</h5>
-            <p>From humble beginnings to extraordinary heights.</p>
+            <p>Curious about our origins? Let's take you back.</p>
             <a href="visionary tale.html" class="btn btn-warning">Explore</a>
           </div>
         </div>
@@ -434,10 +504,21 @@
   <div class="footer">
     <div class="footer-content" style="font-family: 'Roboto', sans-serif">
       <p class="left-text">
-        <i class="fa-regular fa-copyright"></i> Visions | 2024-25
+        <i class="fa-regular fa-copyright"></i> SIES ASCS<br />
+        <a href="https://siesascs.edu.in/"
+          style="text-decoration: underline; color: #d28117; text-underline-offset: 2px; text-decoration-thickness: 1px;"
+          target="_blank"><i class="fas fa-globe" href></i> Visit SIES!</a>
       </p>
-      <p class="right-text">
-        <i class="fas fa-hands-helping"></i> Department of Data Science
+
+
+      <p class="right-text"
+        data-tooltip="Developed by: Dr. Abuzar Ansari, Omer Raza, Arfeen Khan, Rishi Sharma, Vikas Jadye">
+        <i class="fas fa-hands-helping"></i><span
+          style="text-decoration: underline; color: #d28117; text-underline-offset: 2px; text-decoration-thickness: 1px;">
+          Data Science </span><br />
+        <a href="https://dzenithsies.netlify.app/"
+          style="text-decoration: underline; color: #d28117; text-underline-offset: 2px" target="_blank"><i
+            class="fas fa-globe" href></i> Visit D-Zenith!</a>
       </p>
     </div>
     <div class="social-icons">

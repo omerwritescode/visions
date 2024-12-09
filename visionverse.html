@@ -251,6 +251,57 @@
             text-align: right;
         }
 
+        /* Tooltip container */
+        .right-text {
+            position: relative;
+            /* Required for tooltip positioning */
+            cursor: pointer;
+            /* Change cursor to indicate interactivity */
+        }
+
+        /* Tooltip styling */
+        .right-text::after {
+            content: attr(data-tooltip);
+            /* Get text from the custom attribute */
+            display: none;
+            /* Hidden by default */
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            /* Position below the text */
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Dark background for tooltip */
+            color: #ffffff;
+            /* White text */
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease;
+            /* Smooth appearance */
+            opacity: 0;
+            max-width: 90vw;
+            overflow-wrap: break-word;
+        }
+
+        /* Show tooltip on hover */
+        .right-text:hover::after {
+            display: block;
+            opacity: 1;
+        }
+
+        .right-text:hover::after {
+            position: fixed;
+            /* Use fixed positioning to keep tooltip within viewport */
+            top: calc(100% - 10rem);
+            /* Adjust placement dynamically */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         @media (max-width: 768px) {
             .card {
                 margin: 1rem 0;
@@ -294,12 +345,24 @@
             }
 
             .navbar-brand img {
-                height: 50px;
+                height: 40px;
+            }
+
+            .right-text::after {
+                transform: none;
+                white-space: normal;
+                text-align: left;
+                transform: none;
             }
 
         }
 
         @media (max-width: 576px) {
+
+            body {
+                background-image: url("visionsbgfinalmob.png");
+            }
+
             .footer {
                 font-size: 0.8rem;
             }
@@ -373,7 +436,9 @@
         <p style="color: #d28117">
             Explore the events and competitions happening throughout the fest.
         </p>
-        <p style="color: #d28117; font-size: 1.5rem;">2024-25</p>
+        <b>
+            <p style="color: #d28117; font-size: 2.5rem;">2024-25</p>
+        </b>
     </div>
 
 
@@ -416,7 +481,7 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="trivia.webp" class="card-img-top" alt="Trivia" />
+                                <img src="trivia1.jpg" class="card-img-top" alt="Trivia" />
                                 <div class="card-body">
                                     <h5 class="card-title">Trivia</h5>
                                     <p class="card-text">Time: 10:00 AM - 12:00 PM</p>
@@ -443,7 +508,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Group Dance</h5>
                                     <p class="card-text">Time: 11:00 AM - 2:00 PM</p>
-                                    <p class="card-text">Venue: Room 2 or 3</p>
+                                    <p class="card-text">Venue: Room 2</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -462,10 +527,10 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="scavenger.webp" class="card-img-top" alt="Scavenger Hunt" />
+                                <img src="scavenger.jpg" class="card-img-top" alt="Scavenger Hunt" />
                                 <div class="card-body">
                                     <h5 class="card-title">Scavenger Hunt</h5>
-                                    <p class="card-text">Time: 10:00 AM - 12:00 PM</p>
+                                    <p class="card-text">Time: 12:00 - 2:00 PM</p>
                                     <p class="card-text">Venue: College</p>
                                 </div>
                             </div>
@@ -486,7 +551,7 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="run baby run.avif" class="card-img-top" alt="Run Baby Run" />
+                                <img src="hurdlerace.webp" class="card-img-top" alt="Run Baby Run" />
                                 <div class="card-body">
                                     <h5 class="card-title">Run Baby Run</h5>
                                     <p class="card-text">Time: 02:00 PM - 04:00 PM</p>
@@ -512,7 +577,7 @@
                                 <img src="solosinging.jpg" class="card-img-top" alt="Solo Singing" />
                                 <div class="card-body">
                                     <h5 class="card-title">Solo Singing</h5>
-                                    <p class="card-text">Time: 02:30 PM - 04:00 PM</p>
+                                    <p class="card-text">Time: 02:00 PM - 04:00 PM</p>
                                     <p class="card-text">Venue: Auditorium</p>
                                 </div>
                             </div>
@@ -535,8 +600,8 @@
                                 <img src="murder mystery.webp" class="card-img-top" alt="Murder Mystery" />
                                 <div class="card-body">
                                     <h5 class="card-title">Murder Mystery</h5>
-                                    <p class="card-text">Time: 02:30 PM - 04:30 PM</p>
-                                    <p class="card-text">Venue: Room No. 9,10,11</p>
+                                    <p class="card-text">Time: 02:00 PM - 5:00 PM</p>
+                                    <p class="card-text">Venue: Room No. 4,5,6,7</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -577,8 +642,8 @@
                                 <img src="solodancing.jpg" class="card-img-top" alt="Solo Dancing" />
                                 <div class="card-body">
                                     <h5 class="card-title">Solo Dancing</h5>
-                                    <p class="card-text">Time: 10:00 AM - 12:00 PM</p>
-                                    <p class="card-text">Venue: Auditorium</p>
+                                    <p class="card-text">Time: 9:00 AM - 12:00 PM</p>
+                                    <p class="card-text">Venue: Room 2</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -601,7 +666,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Painting</h5>
                                     <p class="card-text">Time: 10:00 AM - 12:00 PM</p>
-                                    <p class="card-text">Venue: Art Room</p>
+                                    <p class="card-text">Venue: Behind Gymkhana</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -620,11 +685,11 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="poetry.jpg" class="card-img-top" alt="Poetry" />
+                                <img src="poetryfinal.webp" class="card-img-top" alt="Poetry" />
                                 <div class="card-body">
                                     <h5 class="card-title">Poetry</h5>
-                                    <p class="card-text">Time: 12:00 PM - 2:00 PM</p>
-                                    <p class="card-text">Venue: Auditorium</p>
+                                    <p class="card-text">Time: 11:00 PM - 2:00 PM</p>
+                                    <p class="card-text">Venue: Room 3</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -646,8 +711,8 @@
                                 <img src="cricket.jpg" class="card-img-top" alt="Cricket" />
                                 <div class="card-body">
                                     <h5 class="card-title">Cricket</h5>
-                                    <p class="card-text">Time: 02:00 PM - 04:00 PM</p>
-                                    <p class="card-text">Venue: Sports Ground</p>
+                                    <p class="card-text">Time: 10:00 AM - 03:00 PM</p>
+                                    <p class="card-text">Venue: Turf</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -666,11 +731,11 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="tugofwar2.jpg" class="card-img-top" alt="Tug of War" />
+                                <img src="tug of war final.avif" class="card-img-top" alt="Tug of War" />
                                 <div class="card-body">
                                     <h5 class="card-title">Tug of War</h5>
-                                    <p class="card-text">Time: 04:00 PM - 06:00 PM</p>
-                                    <p class="card-text">Venue: Sports Ground</p>
+                                    <p class="card-text">Time: 03:00 PM - 05:00 PM</p>
+                                    <p class="card-text">Venue: Turf</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -708,11 +773,11 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="monoact.webp" class="card-img-top" alt="Monoact" />
+                                <img src="monoact1.jpg" class="card-img-top" alt="Monoact" />
                                 <div class="card-body">
                                     <h5 class="card-title">Monoact</h5>
                                     <p class="card-text">Time: 10:00 AM - 12:00 PM</p>
-                                    <p class="card-text">Venue: Auditorium</p>
+                                    <p class="card-text">Venue: Room 2</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -734,7 +799,7 @@
                                 <img src="photowalk.jpg" class="card-img-top" alt="Photowalk" />
                                 <div class="card-body">
                                     <h5 class="card-title">Photowalk</h5>
-                                    <p class="card-text">Time: 12:00 PM - 2:00 PM</p>
+                                    <p class="card-text">Time: 10:00 PM - 12:00 PM</p>
                                     <p class="card-text">Venue: College Campus</p>
                                 </div>
                             </div>
@@ -755,11 +820,11 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="rap.jpg" class="card-img-top" alt="Rap" />
+                                <img src="rapmain.jpg" class="card-img-top" alt="Rap" />
                                 <div class="card-body">
                                     <h5 class="card-title">Rap</h5>
-                                    <p class="card-text">Time: 2:00 PM - 4:00 PM</p>
-                                    <p class="card-text">Venue: Auditorium</p>
+                                    <p class="card-text">Time: 1:00 PM - 3:00 PM</p>
+                                    <p class="card-text">Venue: Room 2</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -778,11 +843,11 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="blamegame.jpg" class="card-img-top" alt="Blame Game" />
+                                <img src="blamegamepic.png" class="card-img-top" alt="Blame Game" />
                                 <div class="card-body">
                                     <h5 class="card-title">Blame Game</h5>
-                                    <p class="card-text">Time: 4:00 PM - 6:00 PM</p>
-                                    <p class="card-text">Venue: Auditorium</p>
+                                    <p class="card-text">Time: 12:00 - 2:00 PM</p>
+                                    <p class="card-text">Venue: Room 3 and 4</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -804,8 +869,8 @@
                                 <img src="football'.jpg" class="card-img-top" alt="Football" />
                                 <div class="card-body">
                                     <h5 class="card-title">Football</h5>
-                                    <p class="card-text">Time: 6:00 PM - 8:00 PM</p>
-                                    <p class="card-text">Venue: Football Ground</p>
+                                    <p class="card-text">Time: 9:00 AM - 2:00 PM</p>
+                                    <p class="card-text">Venue: Turf</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -843,10 +908,10 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="solosinging.jpg" class="card-img-top" alt="Solo Singing" />
+                                <img src="singing.jpg" class="card-img-top" alt="Solo Singing" />
                                 <div class="card-body">
                                     <h5 class="card-title">Solo Singing</h5>
-                                    <p class="card-text">Time: 10:00 AM - 12:00 PM</p>
+                                    <p class="card-text">Time: 2:00 PM - 4:00 PM</p>
                                     <p class="card-text">Venue: Auditorium</p>
                                 </div>
                             </div>
@@ -866,11 +931,11 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="cynosure.jpeg" class="card-img-top" alt="Cynosure Round" />
+                                <img src="cyno1.JPG" class="card-img-top" alt="Cynosure Round" />
                                 <div class="card-body">
                                     <h5 class="card-title">Cynosure Round-1</h5>
-                                    <p class="card-text">Time: 10:00 AM - 12:00 PM</p>
-                                    <p class="card-text">Venue: Auditorium</p>
+                                    <p class="card-text">Time: 2:00 PM - 4:00 PM</p>
+                                    <p class="card-text">Venue: stage</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -889,10 +954,10 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="cynosure.jpeg" class="card-img-top" alt="Cynosure Round" />
+                                <img src="cynosure2.JPG" class="card-img-top" alt="Cynosure Round" />
                                 <div class="card-body">
                                     <h5 class="card-title">Cynosure Round-2</h5>
-                                    <p class="card-text">Time: 12:00 PM - 2:00 PM</p>
+                                    <p class="card-text">Time: 4:00 PM - 6:00 PM</p>
                                     <p class="card-text">Venue: Auditorium</p>
                                 </div>
                             </div>
@@ -915,8 +980,8 @@
                                 <img src="solodancing.jpg" class="card-img-top" alt="Solo Dance" />
                                 <div class="card-body">
                                     <h5 class="card-title">Solo Dance</h5>
-                                    <p class="card-text">Time: 2:00 PM - 4:00 PM</p>
-                                    <p class="card-text">Venue: Auditorium</p>
+                                    <p class="card-text">Time: 4:30 PM - 6:30 PM</p>
+                                    <p class="card-text">Venue: stage</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -935,11 +1000,11 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="fifa.jpg" class="card-img-top" alt="FIFA" />
+                                <img src="fifamain.webp" class="card-img-top" alt="FIFA" />
                                 <div class="card-body">
                                     <h5 class="card-title">FIFA</h5>
-                                    <p class="card-text">Time: 4:00 PM - 6:00 PM</p>
-                                    <p class="card-text">Venue: Gaming Room</p>
+                                    <p class="card-text">Time: 10:00 AM - 3:00 PM</p>
+                                    <p class="card-text">Venue: Statistics Lab</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -977,11 +1042,11 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="instrumental.jpg" class="card-img-top" alt="Instrumental" />
+                                <img src="instru1.JPG" class="card-img-top" alt="Instrumental" />
                                 <div class="card-body">
                                     <h5 class="card-title">Instrumental</h5>
-                                    <p class="card-text">Time: 10:00 AM - 12:00 PM</p>
-                                    <p class="card-text">Venue: Auditorium</p>
+                                    <p class="card-text">Time: 9:00 AM - 12:00 </p>
+                                    <p class="card-text">Venue: stage</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -1000,10 +1065,10 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="rap.jpg" class="card-img-top" alt="Rap" />
+                                <img src="rap 2.jpg" class="card-img-top" alt="Rap" />
                                 <div class="card-body">
                                     <h5 class="card-title">Rap</h5>
-                                    <p class="card-text">Time: 10:00 AM - 12:00 PM</p>
+                                    <p class="card-text">Time: 11:00 AM - 1:00 PM</p>
                                     <p class="card-text">Venue: Auditorium</p>
                                 </div>
                             </div>
@@ -1026,8 +1091,8 @@
                                 <img src="fasion show.jpg" class="card-img-top" alt="Fashion Show" />
                                 <div class="card-body">
                                     <h5 class="card-title">Fashion Show</h5>
-                                    <p class="card-text">Time: 11:00 AM - 2:00 PM</p>
-                                    <p class="card-text">Venue: Room 2 or 3</p>
+                                    <p class="card-text">Time: 12:00 AM - 3:00 PM</p>
+                                    <p class="card-text">Venue: Stage</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -1049,8 +1114,8 @@
                                 <img src="groupdance2.jpg" class="card-img-top" alt="Group Dance" />
                                 <div class="card-body">
                                     <h5 class="card-title">Group Dance</h5>
-                                    <p class="card-text">Time: 11:00 AM - 2:00 PM</p>
-                                    <p class="card-text">Venue: Room 2 or 3</p>
+                                    <p class="card-text">Time: 3:00 PM - 5:00 PM</p>
+                                    <p class="card-text">Venue: Stage</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -1069,11 +1134,11 @@
                         <div class="card-inner">
                             <!-- Front Side -->
                             <div class="card-front">
-                                <img src="bgmi.webp" class="card-img-top" alt="BGMI" />
+                                <img src="bgmiback.jpg" class="card-img-top" alt="BGMI" />
                                 <div class="card-body">
                                     <h5 class="card-title">BGMI</h5>
-                                    <p class="card-text">Time: 2:00 PM - 4:00 PM</p>
-                                    <p class="card-text">Venue: Gaming Room</p>
+                                    <p class="card-text">Time: 9:00 AM - 12:00 PM</p>
+                                    <p class="card-text">Venue: Statistics Lab</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -1096,7 +1161,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Reel Making</h5>
                                     <p class="card-text">Time: 4:00 PM - 6:00 PM</p>
-                                    <p class="card-text">Venue: Auditorium</p>
+                                    <p class="card-text">Medium : Online</p>
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -1121,19 +1186,34 @@
     <div class="footer">
         <div class="footer-content" style="font-family: 'Roboto', sans-serif">
             <p class="left-text">
-                <i class="fa-regular fa-copyright"></i> Visions | 2024-25
+                <i class="fa-regular fa-copyright"></i> SIES ASCS<br />
+                <a href="https://siesascs.edu.in/"
+                    style="text-decoration: underline; color: #d28117; text-underline-offset: 2px; text-decoration-thickness: 1px;"
+                    target="_blank"><i class="fas fa-globe" href></i> Visit SIES!</a>
             </p>
-            <p class="right-text">
-                <i class="fas fa-hands-helping"></i> Department of Data Science
+
+
+            <p class="right-text"
+                data-tooltip="Developed by: Dr. Abuzar Ansari, Omer Raza, Arfeen Khan, Rishi Sharma, Vikas Jadye">
+                <i class="fas fa-hands-helping"></i><span
+                    style="text-decoration: underline; color: #d28117; text-underline-offset: 2px; text-decoration-thickness: 1px;">
+                    Data Science </span><br />
+                <a href="https://dzenithsies.netlify.app/"
+                    style="text-decoration: underline; color: #d28117; text-underline-offset: 2px" target="_blank"><i
+                        class="fas fa-globe" href></i> Visit D-Zenith!</a>
             </p>
         </div>
         <div class="social-icons">
             <a href="https://www.instagram.com/siesvisions?igsh=MWNqZDJ0amxoOG5ncw==" target="_blank"
-                class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com/siesvisions" class="social-icon" target="_blank"><i
-                    class="fa-brands fa-facebook"></i></a>
-            <a href="mailto:siesvisions@gmail.com" class="social-icon" target="_blank"><i
-                    class="fas fa-envelope"></i></a>
+                class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com/siesvisions" class="social-icon" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="mailto:siesvisions@gmail.com" class="social-icon" target="_blank">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
     </div>
 

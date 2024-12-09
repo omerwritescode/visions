@@ -7,8 +7,7 @@
   <title>The Team | Visions</title>
   <link rel="shortcut icon" type="visions-icon" href="vision logo (1).png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Font Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
@@ -67,6 +66,27 @@
       object-fit: contain;
     }
 
+    @keyframes colorChange {
+      0% {
+        color: #ffffff;
+      }
+
+      /* Start color */
+      50% {
+        color: rgb(52, 105, 52);
+      }
+
+      /* Another color */
+      100% {
+        color: #ffffff;
+      }
+    }
+
+    .eventGlow {
+      animation: colorChange 2s infinite;
+      text-decoration: none;
+    }
+
     /* Hero Section */
     .hero-section {
       padding: 5rem 0 2rem 0;
@@ -108,7 +128,7 @@
     }
 
     .visionary-card img {
-      width: 55%;
+      width: 50%;
       /* Reduced image width */
       height: auto;
       object-fit: cover;
@@ -127,6 +147,122 @@
       /* Reduced font size */
       margin-bottom: 1rem;
       text-align: center;
+    }
+
+    .visionary-text p:first-letter {
+      font-size: 3rem;
+      /* Adjust size as needed */
+      font-weight: bold;
+      float: left;
+      margin-right: 5px;
+      /* Adds spacing between the letter and the text */
+      line-height: 1;
+      color: #d28117;
+      /* Optional: Customize the color */
+    }
+
+    .footer {
+      text-align: center;
+      padding: 0.5rem 1.5rem;
+      font-size: 0.9rem;
+      color: #ffffff;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .footer-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* margin-bottom: 0.5rem; */
+      /* Space between text and social icons */
+    }
+
+    .left-text,
+    .right-text {
+      flex: 1;
+      font-size: 0.9rem;
+      color: #ffffff;
+      color: #d28117;
+    }
+
+    .left-text {
+      text-align: left;
+    }
+
+    .right-text {
+      text-align: right;
+    }
+
+    .social-icon {
+      color: rgb(52, 105, 52);
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      color: rgb(76, 156, 76);
+      transform: scale(1.2);
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* Tooltip container */
+    .right-text {
+      position: relative;
+      /* Required for tooltip positioning */
+      cursor: pointer;
+      /* Change cursor to indicate interactivity */
+    }
+
+    /* Tooltip styling */
+    .right-text::after {
+      content: attr(data-tooltip);
+      /* Get text from the custom attribute */
+      display: none;
+      /* Hidden by default */
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      /* Position below the text */
+      background-color: rgba(0, 0, 0, 0.8);
+      /* Dark background for tooltip */
+      color: #ffffff;
+      /* White text */
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      z-index: 10;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease;
+      /* Smooth appearance */
+      opacity: 0;
+      max-width: 90vw;
+      overflow-wrap: break-word;
+    }
+
+    /* Show tooltip on hover */
+    .right-text:hover::after {
+      display: block;
+      opacity: 1;
+    }
+
+    .right-text:hover::after {
+      position: fixed;
+      /* Use fixed positioning to keep tooltip within viewport */
+      top: calc(100% - 10rem);
+      /* Adjust placement dynamically */
+      left: 50%;
+      transform: translateX(-50%);
     }
 
 
@@ -171,9 +307,21 @@
       .navbar-brand img {
         height: 40px;
       }
+
+      .right-text::after {
+        transform: none;
+        white-space: normal;
+        text-align: left;
+        transform: none;
+      }
     }
 
     @media (max-width: 576px) {
+
+      body {
+        background-image: url("visionsbgfinalmob.png");
+      }
+
       .visionary-card {
         padding: 1rem;
         min-width: 100%;
@@ -197,10 +345,10 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="visionverse.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link eventGlow" href="visionverse.html">Events</a></li>
           <li class="nav-item"><a class="nav-link" href="partnerfinal.html">Partners</a></li>
           <li class="nav-item"><a class="nav-link" href="crew.html" style="color: #d28117;">The Team</a></li>
-          <li class="nav-item"><a class="nav-link" href="visionary tale.html">Visionary Tale</a></li>
+          <li class="nav-item"><a class="nav-link" href="visionary tale.html">The Visionary Tale</a></li>
           <li class="nav-item"><a class="nav-link" href="contact us.html">Reach Out</a></li>
         </ul>
       </div>
@@ -211,7 +359,9 @@
   <div class="hero-section">
     <h1 class="hero-title">Meet the Visionaries - The Team Behind Visions</h1>
     <p class="hero-subtitle">The minds and hands behind the magic.</p>
-    <p class="hero-subtitle">2024-25</p>
+    <b>
+      <p class="hero-title">2024-25</p>
+    </b>
   </div>
 
   <!-- Visionary Section -->
@@ -224,8 +374,11 @@
         <h3>Visionary Leadership</h3>
         <p>Tanish Shetty, a visionary leader, brings fresh perspectives and bold ideas to the table. With unmatched
           enthusiasm and a commitment to excellence, he inspires creativity and progress, ensuring Visions 2024-25 sets
-          new benchmarks. Tanish's energy and leadership promise to take the fest to new heights. Presenting Tanish
-          Shetty, President of Visions 2024-25.</p>
+          new benchmarks. Tanish's energy and leadership promise to take the fest to new heights. <b
+            style="color: #d28117;">
+            Presenting Tanish
+            Shetty, President of Visions 2024-25.
+          </b></p>
       </div>
     </div>
 
@@ -242,30 +395,39 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="logcp1.jpg" alt="SIES College">
+          <img src="logcp1.jpg" alt="SIES College" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Seamless Coordination</h3>
             <p>Sarang Thube, a leader with bold vision and unshakable determination, embodies resilience and strength.
-              His ability to inspire and guide the team makes him the cornerstone of success. Presenting to you, Sarang
-              Thube, Chairperson for Team Logistics 2024-25</p>
+              His ability to inspire and guide the team makes him the cornerstone of success. <b
+                style="color: #d28117;">
+                Presenting to you, Sarang
+                Thube, Chairperson for Team Logistics 2024-25
+              </b></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="logcp2.jpg" alt="Alternative SIES Image">
+          <img src="logcp2.jpg" alt="Alternative SIES Image" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Seamless Coordination</h3>
             <p>Musab Ansari, a master of calm and effective problem-solving, fosters a positive and approachable
-              environment. His friendly demeanor and sharp mindset ensure the team stays united and focused. Introducing
-              Musab Ansari, Vice-Chairperson for Team Logistics 2024-25.</p>
+              environment. His friendly demeanor and sharp mindset ensure the team stays united and focused. <b
+                style="color: #d28117;">
+                Introducing
+                Musab Ansari, Vice-Chairperson for Team Logistics 2024-25.
+              </b></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="logcp3.jpg" alt="Another SIES Image">
+          <img src="logcp3.jpg" alt="Another SIES Image" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Seamless Coordination</h3>
             <p>Arpita Chandaliya, a source of optimism and relentless determination, motivates everyone around her to
-              strive for excellence. Her positivity transforms challenges into opportunities for growth. Meet Arpita
-              Chandaliya, Vice-Chairperson for Team Logistics 2024-25.</p>
+              strive for excellence. Her positivity transforms challenges into opportunities for growth. <b
+                style="color: #d28117;">
+                Meet Arpita
+                Chandaliya, Vice-Chairperson for Team Logistics 2024-25.
+              </b></p>
           </div>
         </div>
       </div>
@@ -279,6 +441,8 @@
       </button>
     </div>
 
+    <br>
+
     <!-- Carousel Card 3 -->
     <div id="carouselCard3" class="carousel slide visionary-card" data-bs-ride="carousel">
       <!-- Indicators for Carousel 3 -->
@@ -291,44 +455,51 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="prhcp.jpg" alt="SIES College">
+          <img src="prhcp.jpg" alt="SIES College" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Connecting and Welcoming</h3>
             <p>Kali Shinde brings a unique blend of fun and focus to her role as Chairperson. She makes work feel
-              effortless and enjoyable, creating an atmosphere where everyone can thrive. At the same time, she’s very
+              effortless and enjoyable, creating an atmosphere where everyone can thrive. At the same time, she's very
               particular about getting things right and ensures that everything is up to standard. Her approach is
-              simple—work hard, have fun, and get things done. Introducing to you, Chairperson of Public Relations and
-              Hospitality- Kali Shinde.</p>
+              simple—work hard, have fun, and get things done. <b style="color: #d28117;">
+                Introducing to you, Chairperson of Public Relations and
+                Hospitality- Kali Shinde.
+              </b></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="prhvcp1.jpg" alt="Alternative SIES Image">
+          <img src="prhvcp1.jpg" alt="Alternative SIES Image" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Connecting and Welcoming</h3>
             <p>Prithvi Shetty is the epitome of professionalism. With a sharp focus on precision and perfection, she
               ensures that every task is completed to the highest standard. Her work ethic and attention to detail make
-              her an invaluable asset to the team. Introducing to you, Vice Chairperson of Public Relations and
-              Hospitality - Prithvi Shetty</p>
+              her an invaluable asset to the team. <b style="color: #d28117;">
+                Introducing to you, Vice Chairperson of Public Relations and
+                Hospitality - Prithvi Shetty.
+              </b></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="prhvcp2.jpg" alt="Another SIES Image">
+          <img src="prhvcp2.jpg" alt="Another SIES Image" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Connecting and Welcoming</h3>
             <p>Raynard Chettiar brings a refreshing sense of ease and approachability to the workplace. His friendly
               demeanor makes collaboration a breeze, while his reliability ensures that deadlines are always met with
-              efficiency. Introducing to you, Vice Chairperson of Public Relations and Hospitality - Raynard Chettiar.
+              efficiency. <b style="color: #d28117;">Introducing to you, Vice Chairperson of Public Relations and
+                Hospitality - Raynard Chettiar.</b>
             </p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="prhvcp3.jpg" alt="SIES College Event">
+          <img src="prhvcp3.jpg" alt="SIES College Event" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Connecting and Welcoming</h3>
             <p>Nambirajan Konar exudes a calm yet magnetic energy that immediately draws people in. His positive
               attitude and smooth working style foster an environment of harmony, making him an ideal leader who
-              inspires those around him. Introducing to you, Vice Chairperson of Public Relations and Hospitality -
-              Nambirajan Konar.</p>
+              inspires those around him. <b style="color: #d28117;">
+                Introducing to you, Vice Chairperson of Public Relations and Hospitality -
+                Nambirajan Konar.
+              </b></p>
           </div>
         </div>
       </div>
@@ -342,6 +513,8 @@
       </button>
     </div>
 
+    <br>
+
     <!-- Carousel Card 4 -->
     <div id="carouselCard4" class="carousel slide visionary-card" data-bs-ride="carousel">
       <!-- Indicators for Carousel 4 -->
@@ -354,40 +527,46 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="emcp.jpg" alt="SIES College">
+          <img src="emcp.jpg" alt="SIES College" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Flawless Execution</h3>
             <p>Prithvi, an inspiring leader with a vision to bring out the best in everyone, combines creativity and
-              determination to guide the team toward excellence. Always reliable and full of innovative ideas, he’s the
+              determination to guide the team toward excellence. Always reliable and full of innovative ideas, he's the
               driving force behind every success.
-              Introducing to you, Prithvi Mudliyar, Chairperson for Team Event Management 2024-25.</p>
+              <b style="color: #d28117;">Introducing to you, Prithvi Mudliyar, Chairperson for Team Event Management
+                2024-25.</b>
+            </p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="emvcp1.jpg" alt="Alternative SIES Image">
+          <img src="emvcp1.jpg" alt="Alternative SIES Image" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Flawless Execution</h3>
             <p>Kunal, the go-to person for tackling challenges with a smile, adds a perfect blend of creativity and hard
               work to the team. His sharp insights and unwavering commitment make him an irreplaceable asset.
-              Introducing to you, Kunal Dwivedi, for Team Event Management 2024-25.</p>
+              <b style="color: #d28117;">Introducing to you, Kunal Dwivedi, for Team Event Management 2024-25.</b>
+            </p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="emvcp2.jpg" alt="Another SIES Image">
+          <img src="emvcp2.jpg" alt="Another SIES Image" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Flawless Execution</h3>
             <p>Nahush effortlessly balances efficiency and enthusiasm. Known for his problem-solving skills and calm
-              demeanor, he ensures everything runs smoothly while keeping spirits high. Introducing to you, Nahush
-              Phadke, for Team Event Management 2024-25.</p>
+              demeanor, he ensures everything runs smoothly while keeping spirits high. <b style="color: #d28117;">
+                Introducing to you, Nahush
+                Phadke, for Team Event Management 2024-25
+              </b>.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="emvcp3.jpg" alt="SIES College Event">
+          <img src="emvcp3.jpg" alt="SIES College Event" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Flawless Execution</h3>
             <p>Riya, a powerhouse of positivity and energy, brings unmatched dedication to the team. With her proactive
               approach and constant encouragement, she inspires everyone to give their best.
-              Introducing to you, Riya Patil, for Team Event Management 2024-25.</p>
+              <b style="color: #d28117;">Introducing to you, Riya Patil, for Team Event Management 2024-25.</b>
+            </p>
           </div>
         </div>
       </div>
@@ -401,6 +580,8 @@
       </button>
     </div>
 
+    <br>
+
     <!-- Carousel Card 5 -->
     <div id="carouselCard5" class="carousel slide visionary-card" data-bs-ride="carousel">
       <!-- Indicators for Carousel 5 -->
@@ -412,33 +593,35 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="financecp.jpg" alt="SIES College">
+          <img src="financecp.jpg" alt="SIES College" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Fueling Growth</h3>
             <p>Shivam's leadership is a perfect blend of vision and action. With a sharp analytical mind and a composed
               approach, he tackles challenges with confidence and turns ideas into impactful results. His ability to
               inspire and guide makes him an exceptional leader.
-              Introducing to you, Shivam Dubey, Chairperson for Team Finance 2024-25.
-
+              <b style="color: #d28117;">Introducing to you, Shivam Dubey, Chairperson for Team Finance 2024-25.</b>
             </p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="financevcp1.jpg" alt="Alternative SIES Image">
+          <img src="financevcp1.jpg" alt="Alternative SIES Image" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Fueling Growth</h3>
             <p>Benita is the epitome of determination and creativity, combining innovative ideas with practical
               execution.
               Her meticulous nature and collaborative spirit make her a key force in driving the team's success.
-              Introducing to you, Benita Binil, Vice-Chairperson for Team Finance 2024-25</p>
+              <b style="color: #d28117;">Introducing to you, Benita Binil, Vice-Chairperson for Team Finance
+                2024-25.</b>
+            </p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="financevcp2.jpg" alt="Another SIES Image">
+          <img src="financevcp2.jpg" alt="Another SIES Image" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Fueling Growth</h3>
             <p>Trisha is a powerhouse of energy and adaptability, always ready to face challenges with a smile. Her
-              quick thinking and dedication ensure seamless execution of tasks, making her an irreplaceable p</p>
+              quick thinking and dedication ensure seamless execution of tasks, making her an irreplaceable part of the
+              team. <b style="color: #d28117;">Introducing to you, Trisha Shetty, Vice-Chairperson for Team Finance 2024-25.</b></p>
           </div>
         </div>
       </div>
@@ -452,6 +635,8 @@
       </button>
     </div>
 
+    <br>
+
     <!-- Carousel Card 6 -->
     <div id="carouselCard6" class="carousel slide visionary-card" data-bs-ride="carousel">
       <!-- Indicators for Carousel 6 -->
@@ -464,39 +649,39 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="marketcp.jpg" alt="SIES College">
+          <img src="marketcp.jpg" alt="SIES College" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Igniting Buzz, Spreading the Word</h3>
-            <p>Prachi Sharma is the visionary leader driving Team Marketing’s success. With a strategic mindset and an
+            <p>Prachi Sharma is the visionary leader driving Team Marketing's success. With a strategic mindset and an
               innate ability to inspire her team, she transforms ideas into impactful results.
-              Introducing Prachi Sharma, Chairperson, Team Marketing 2024-25.</p>
+              <b style="color: #d28117;">Introducing Prachi Sharma, Chairperson, Team Marketing 2024-25.</b></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="marketvcp.jpg" alt="Alternative SIES Image">
+          <img src="marketvcp.jpg" alt="Alternative SIES Image" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Igniting Buzz, Spreading the Word</h3>
             <p>Devansh Vira excels in crafting strategies that deliver exceptional outcomes. His analytical skills and
               calm leadership ensure the team stays focused and on target, even under pressure.
-              Introducing Devansh Vira, Vice-Chairperson, Team Marketing 2024-25.</p>
+              <b style="color: #d28117;">Introducing Devansh Vira, Vice-Chairperson, Team Marketing 2024-25.</b></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="marketvcp2.jpg" alt="Another SIES Image">
+          <img src="marketvcp2.jpg" alt="Another SIES Image" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Igniting Buzz, Spreading the Word</h3>
             <p>Pooja Wadhwa combines passion with precision, offering unmatched organizational skills and leadership.
-              Her ability to manage multiple tasks while maintaining high standards is key to the team’s success.
-              Introducing Pooja Wadhwa, Vice-Chairperson, Team Marketing 2024-25.</p>
+              Her ability to manage multiple tasks while maintaining high standards is key to the team's success.
+              <b style="color: #d28117;">Introducing Pooja Wadhwa, Vice-Chairperson, Team Marketing 2024-25.</b></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="marketvcp3.jpg" alt="SIES College Event">
+          <img src="marketvcp3.jpg" alt="SIES College Event" style="padding-bottom: 10px;">
           <div class="visionary-text">
             <h3>Igniting Buzz, Spreading the Word</h3>
             <p>Sanchaita Deb is the creative force behind every campaign. Her vibrant energy and innovative perspective
               keep the team ahead of the curve, ensuring every detail resonates.
-              Introducing Sanchaita Deb, Vice-Chairperson, Team Marketing 2024-25.</p>
+              <b style="color: #d28117;">Introducing Sanchaita Deb, Vice-Chairperson, Team Marketing 2024-25.</b></p>
           </div>
         </div>
       </div>
@@ -509,8 +694,44 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+  </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-content" style="font-family: 'Roboto', sans-serif">
+      <p class="left-text">
+        <i class="fa-regular fa-copyright"></i> SIES ASCS<br />
+        <a href="https://siesascs.edu.in/"
+          style="text-decoration: underline; color: #d28117; text-underline-offset: 2px; text-decoration-thickness: 1px;"
+          target="_blank"><i class="fas fa-globe" href></i> Visit SIES!</a>
+      </p>
+
+
+      <p class="right-text"
+        data-tooltip="Developed by: Dr. Abuzar Ansari, Omer Raza, Arfeen Khan, Rishi Sharma, Vikas Jadye">
+        <i class="fas fa-hands-helping"></i><span
+          style="text-decoration: underline; color: #d28117; text-underline-offset: 2px; text-decoration-thickness: 1px;">
+          Data Science </span><br />
+        <a href="https://dzenithsies.netlify.app/"
+          style="text-decoration: underline; color: #d28117; text-underline-offset: 2px" target="_blank"><i
+            class="fas fa-globe" href></i> Visit D-Zenith!</a>
+      </p>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/siesvisions?igsh=MWNqZDJ0amxoOG5ncw==" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://facebook.com/siesvisions" class="social-icon" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <a href="mailto:siesvisions@gmail.com" class="social-icon" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
   </div>

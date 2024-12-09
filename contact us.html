@@ -23,7 +23,6 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            padding-bottom: 3rem;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
@@ -65,6 +64,27 @@
 
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23e2942ecc' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #ffffff;
+            }
+
+            /* Start color */
+            50% {
+                color: rgb(52, 105, 52);
+            }
+
+            /* Another color */
+            100% {
+                color: #ffffff;
+            }
+        }
+
+        .eventGlow {
+            animation: colorChange 2s infinite;
+            text-decoration: none;
         }
 
         .form-control:focus {
@@ -127,7 +147,106 @@
 
         .footer {
             text-align: center;
-            padding: 0.5rem 0;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            color: #ffffff;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* margin-bottom: 0.5rem; */
+            /* Space between text and social icons */
+        }
+
+        .left-text,
+        .right-text {
+            flex: 1;
+            font-size: 0.9rem;
+            color: #ffffff;
+            color: #d28117;
+        }
+
+        .left-text {
+            text-align: left;
+        }
+
+        .right-text {
+            text-align: right;
+        }
+
+        .social-icon {
+            color: rgb(52, 105, 52);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            color: rgb(76, 156, 76);
+            transform: scale(1.2);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Tooltip container */
+        .right-text {
+            position: relative;
+            /* Required for tooltip positioning */
+            cursor: pointer;
+            /* Change cursor to indicate interactivity */
+        }
+
+        /* Tooltip styling */
+        .right-text::after {
+            content: attr(data-tooltip);
+            /* Get text from the custom attribute */
+            display: none;
+            /* Hidden by default */
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            /* Position below the text */
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Dark background for tooltip */
+            color: #ffffff;
+            /* White text */
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease;
+            /* Smooth appearance */
+            opacity: 0;
+            max-width: 90vw;
+            overflow-wrap: break-word;
+        }
+
+        /* Show tooltip on hover */
+        .right-text:hover::after {
+            display: block;
+            opacity: 1;
+        }
+
+        .right-text:hover::after {
+            position: fixed;
+            /* Use fixed positioning to keep tooltip within viewport */
+            top: calc(100% - 10rem);
+            /* Adjust placement dynamically */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         @media (max-width: 768px) {
@@ -174,6 +293,10 @@
 
         @media (max-width: 576px) {
 
+            body {
+                background-image: url("visionsbgfinalmob.png");
+            }
+
             .navbar {
                 flex-direction: column;
                 height: auto;
@@ -205,6 +328,13 @@
             .navbar-brand img {
                 height: 40px;
             }
+
+            .right-text::after {
+                transform: none;
+                white-space: normal;
+                text-align: left;
+                transform: none;
+            }
         }
     </style>
 </head>
@@ -227,7 +357,7 @@
                         <a class="nav-link" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="visionverse.html">Events</a>
+                        <a class="nav-link eventGlow" href="visionverse.html">Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="partnerfinal.html">Partners</a>
@@ -279,15 +409,15 @@
             <div class="col-lg-6" style="color: black; font-weight: bold;">
                 <div class="contact-card">
                     <h2><strong>Contact Details</strong></h4>
-                        <p><i class="bi bi-envelope-fill" style="color: black; font-weight: bold;"></i>
+                        <p><i class="fa-solid fa-envelope" style="color: black; font-weight: bold;"></i>&nbsp;
                             <a href="mailto:siesvisions@gmail.com"
                                 style="text-decoration: none; color: #800000;">siesvisions@gmail.com</a>
                         </p>
-                        <p><i class="bi bi-instagram" style="color: black; font-weight: bold;"></i>
+                        <p><i class="fa-brands fa-instagram" style="color: black; font-weight: bold;"></i>&nbsp;
                             <a href="https://www.instagram.com/siesvisions/" target="_blank"
-                                style="text-decoration: none; color: #800000; ">@siesvisions</a>
+                                style="text-decoration: none; color: #800000; ">siesvisions</a>
                         </p>
-                        <p><i class="bi bi-geo-alt-fill" style="color: black; font-weight: bold;"></i>
+                        <p><i class="fa-solid fa-location-dot" style="color: black; font-weight: bold;"></i>&nbsp;
                             <a href="https://www.google.com/maps?q=SIES+College,+Sion+West,+Mumbai+400+022"
                                 target="_blank" style="text-decoration: none; color: #800000;">SIES College, Sion West,
                                 Mumbai 400 022,
@@ -300,6 +430,13 @@
             </div>
         </div>
     </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
     <script>
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
@@ -357,16 +494,43 @@
 
     <!-- Footer -->
     <div class="footer">
-        <a href="https://www.instagram.com/siesvisions?igsh=MWNqZDJ0amxoOG5ncw==" target="_blank" class="social-icon"><i
-                class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com/siesvisions" class="social-icon" target="_blank"><i
-                class="fa-brands fa-facebook"></i></a>
-        <a href="mailto:siesvisions@gmail.com" class="social-icon" target="_blank"><i class="fas fa-envelope"></i></a>
-    </div>
+        <div class="footer-content" style="font-family: 'Roboto', sans-serif">
+            <p class="left-text">
+                <i class="fa-regular fa-copyright"></i> SIES ASCS<br />
+                <a href="https://siesascs.edu.in/"
+                    style="text-decoration: underline; color: #d28117; text-underline-offset: 2px; text-decoration-thickness: 1px;"
+                    target="_blank"><i class="fas fa-globe" href></i> Visit SIES!</a>
+            </p>
+
+
+            <p class="right-text"
+                data-tooltip="Developed by: Dr. Abuzar Ansari, Omer Raza, Arfeen Khan, Rishi Sharma, Vikas Jadye">
+                <i class="fas fa-hands-helping"></i><span
+                    style="text-decoration: underline; color: #d28117; text-underline-offset: 2px; text-decoration-thickness: 1px;">
+                    Data Science </span><br />
+                <a href="https://dzenithsies.netlify.app/"
+                    style="text-decoration: underline; color: #d28117; text-underline-offset: 2px" target="_blank"><i
+                        class="fas fa-globe" href></i> Visit D-Zenith!</a>
+            </p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/siesvisions?igsh=MWNqZDJ0amxoOG5ncw==" target="_blank"
+                class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com/siesvisions" class="social-icon" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="mailto:siesvisions@gmail.com" class="social-icon" target="_blank">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 
 </body>
