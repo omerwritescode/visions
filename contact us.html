@@ -245,7 +245,7 @@
             /* Use fixed positioning to keep tooltip within viewport */
             top: calc(100% - 10rem);
             /* Adjust placement dynamically */
-            left: 50%;
+            left: 80%;
             transform: translateX(-50%);
         }
 
@@ -347,6 +347,15 @@
                 white-space: normal;
                 text-align: left;
                 transform: none;
+            }
+
+            .right-text:hover::after {
+                position: fixed;
+                /* Use fixed positioning to keep tooltip within viewport */
+                top: calc(100% - 10rem);
+                /* Adjust placement dynamically */
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -507,7 +516,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <div class="footer-content" style="font-family: 'Roboto', sans-serif">
+        <div class="footer-content">
             <p class="left-text">
                 <i class="fa-regular fa-copyright"></i> SIES ASCS<br />
                 <a href="https://siesascs.edu.in/"
@@ -517,13 +526,10 @@
 
 
             <p class="right-text"
-                data-tooltip="Developed by: Dr. Abuzar Ansari, Omer Raza, Arfeen Khan, Rishi Sharma, Vikas Jadye">
+                data-tooltip="Developed by: H.O.D - Dr. Abuzar Ansari, Omer Raza, Arfeen Khan, Rishi Sharma, Vikas Jadye">
                 <i class="fas fa-hands-helping"></i><span
                     style="text-decoration: underline; color: #d28117; text-underline-offset: 2px; text-decoration-thickness: 1px;">
-                    Data Science </span><br />
-                <a href="https://dzenithsies.netlify.app/"
-                    style="text-decoration: underline; color: #d28117; text-underline-offset: 2px" target="_blank"><i
-                        class="fas fa-globe" href></i> Visit D-Zenith!</a>
+                    Department of Data Science </span>
             </p>
         </div>
         <div class="social-icons">
